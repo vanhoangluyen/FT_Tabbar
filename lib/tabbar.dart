@@ -26,6 +26,7 @@ class HomeState extends State<TabbarController> {
       body: children[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTapped,
+        selectedItemColor: Colors.amber,
         currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(title: Text('Home'), icon: Icon(Icons.home)),
