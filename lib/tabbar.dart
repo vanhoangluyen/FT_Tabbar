@@ -12,7 +12,7 @@ class TabbarController extends StatefulWidget {
 class HomeState extends State<TabbarController> {
   int currentIndex = 0;
   final List<Widget> children = [
-    ChildController(Colors.red),
+    HomeScreeen(),
     ChildController(Colors.green),
     ChildController(Colors.blue)
   ];
@@ -53,6 +53,46 @@ class ChildController extends StatelessWidget {
     // TODO: implement build
     return Container(
       color: color,
+    );
+  }
+}
+
+class HomeScreeen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Center(
+        child: RaisedButton(
+          child: Text('Send Data'),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailHomeScreen('Hello World')));
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class DetailHomeScreen extends StatelessWidget {
+  final String inforReceive;
+  DetailHomeScreen(this.inforReceive);
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      body: Container(
+        child: Center(
+          child: Text(
+            inforReceive,
+            style: TextStyle(color: Colors.yellow),
+          ),
+        ),
+      ),
     );
   }
 }
