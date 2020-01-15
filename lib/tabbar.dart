@@ -22,6 +22,7 @@ class HomeState extends State<TabbarController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tabbar Controller'),
+        backgroundColor: Colors.lightBlueAccent,
       ),
       body: children[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -84,13 +85,24 @@ class DetailHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Container(
-        child: Center(
-          child: Text(
-            inforReceive,
-            style: TextStyle(color: Colors.yellow),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.grey,
+        appBar: AppBar(
+          title: Text('Detail Home'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: Container(
+          child: Center(
+            child: Text(
+              inforReceive,
+              style: TextStyle(color: Colors.yellow),
+            ),
           ),
         ),
       ),
